@@ -42,3 +42,10 @@ hobbies: ["Jogos", "Vôlei", "Automobilismo"]
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pedrofratassi&layout=compact&theme=algolia" alt="Top Langs" />
 </p>
 
+<!-- Animação da cobrinha -->
+<p align="center">
+  <img alt="Snake animation" src="https://github.com/pedrofratassi/pedrofratassi/blob/output/github-contribution-grid-snake.svg" />
+</p>
+
+
+
