@@ -1,35 +1,39 @@
-name: Generate Snake
+name: generate animation
 
 on:
+  # Executa automaticamente a cada 24 horas
   schedule:
-    # A cada 6 horas
-    - cron: "0 */6 * * *"
+    - cron: "0 */24 * * *"
+  
+  # Permite executar manualmente o job a qualquer momento
   workflow_dispatch:
+  
+  # Executa a cada push no branch master
+  push:
+    branches:
+      - master
 
 jobs:
-  build:
+  generate:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Generate the snake
-        uses: Platane/snk@v0.0.18
-        id: snake-gif
+      # Gera o jogo da cobrinha a partir do gráfico de contribuições do usuário do GitHub (pedrofratassi), gerando uma animação SVG em dist/github-contribution-grid-snake.svg
+      - name: generate github-contribution-grid-snake.svg
+        uses: Platane/snk/svg-only@v3
         with:
           github_user_name: pedrofratassi
-          gif_out_path: dist/github-contribution-grid-snake.gif
-          svg_out_path: dist/github-contribution-grid-snake.svg
-
-      - run: git status
-
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
-          force: true
-
-      - uses: crazy-max/ghaction-github-pages@v4
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          
+      # Envia o conteúdo de dist para um branch
+      # O conteúdo estará disponível em https://raw.githubusercontent.com/pedrofratassi/SEU_REPOSITORIO/output/github-contribution-grid-snake.svg ou como página do GitHub
+      - name: push github-contribution-grid-snake.svg para o branch de saída
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
