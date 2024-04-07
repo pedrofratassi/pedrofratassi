@@ -17,7 +17,6 @@ campos_de_interesses:
   ]
   
 atualmente_aprendendo: ["Machine Learning, Python"]
-2024 Goals: ["Create 25+ Projects and learn at least 5-10 new Technologies."]
 hobbies: ["Jogos", "Vôlei", "Automobilismo"]
 ```
 
@@ -43,4 +42,3 @@ hobbies: ["Jogos", "Vôlei", "Automobilismo"]
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pedrofratassi&layout=compact&theme=algolia" alt="Top Langs" />
 </p>
 
-![Snake animation](https://github.com/pedrofratassi/pedrofratassi/blob/output/github-contribution-grid-snake.svg)
