@@ -16,7 +16,7 @@ campos_de_interesses:
     "UI/UX"
   ]
   
-atualmente_aprendendo: ["Machine Learning, Python, Estrutura de Dados em Java"]
+atualmente_aprendendo: ["Machine Learning, Python, Ciência de Dados, IA"]
 hobbies: ["Jogos", "Vôlei", "Automobilismo"]
 ```
 
